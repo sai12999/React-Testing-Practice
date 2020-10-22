@@ -7,6 +7,6 @@ Enzyme.configure({adapter: new EnzymeAdapter()});
 
 test('renders learn react link', () => {
   const shallowWrapper = shallow(<App/>);
-  const elements = shallowWrapper.find('[data-test="component-app"]');
-  expect(elements.length).toBe(1);
+  const appComponent = shallowWrapper.find('[data-test="component-app"]');
+  expect(appComponent.length).toBe(1);
 });
