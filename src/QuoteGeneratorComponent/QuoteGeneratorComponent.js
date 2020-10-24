@@ -22,7 +22,7 @@ const QuoteGeneratorComponent = (props) => {
 }
 
 const mapStateToProps = state => ({
-    myquotes: state.quotes
+    myquotes: state.quoteReducer.quotes
 });
 
 const mapDispatchToProps = (dispatch) => ({

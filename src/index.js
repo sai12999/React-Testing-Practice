@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { quoteReducer } from './QuoteReducer/quoteReducer';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware, combineReducers} from 'redux';
 import * as serviceWorker from './serviceWorker';
+import thunk from 'redux-thunk'
 import { Provider } from 'react-redux';
+import {reduxThunkReducer} from './ReduxThunkReducer/reduxThunkReducer';
 
-const store = createStore(quoteReducer);
+const rootReducer = combineReducers({
+  quoteReducer,
+  reduxThunkReducer
+})
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <React.StrictMode>
